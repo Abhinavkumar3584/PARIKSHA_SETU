@@ -7,59 +7,58 @@ const ResultNow = ({
   eligibilityResult, 
   examData, 
   formData, 
-  requiredPercentage,
-  darkMode = false 
+  requiredPercentage
 }) => {
   if (!eligibilityResult) return null;
 
   return (
-    <div className={`eligibility-result ${eligibilityResult.isEligible ? 'eligible' : 'not-eligible'} ${darkMode ? 'dark:bg-opacity-20 dark:border-opacity-50' : ''}`}>
+    <div className={`eligibility-result ${eligibilityResult.isEligible ? 'eligible' : 'not-eligible'}`}>
       <div className="result-header">
         {eligibilityResult.isEligible ? 
           <FaCheckCircle className="result-icon eligible-icon" /> : 
           <FaTimesCircle className="result-icon not-eligible-icon" />
         }
-        <h3 className={darkMode ? "dark:text-gray-100" : ""}>{eligibilityResult.isEligible ? 'You are eligible for this exam!' : 'You may not be eligible for this exam'}</h3>
+        <h3>{eligibilityResult.isEligible ? 'You are eligible for this exam!' : 'You may not be eligible for this exam'}</h3>
       </div>
       
       <div className="result-sections-layout">
         {/* Left column - Summary and Streams */}
         <div className="result-left-column">
           {/* Main Eligibility Status */}
-          <div className={`result-section-card primary-section ${darkMode ? 'dark:bg-gray-700 dark:border-gray-600' : ''}`}>
+          <div className="result-section-card primary-section">
             <div className="section-header">
-              <FaInfoCircle className={`section-icon ${darkMode ? 'dark:text-blue-400' : ''}`} />
-              <h4 className={darkMode ? 'dark:text-gray-200' : ''}>Eligibility Summary</h4>
+              <FaInfoCircle className="section-icon" />
+              <h4>Eligibility Summary</h4>
             </div>
             <div className="summary-content">
-              <div className={`summary-item ${darkMode ? 'dark:border-gray-600' : ''}`}>
-                <span className={`summary-label ${darkMode ? 'dark:text-gray-400' : ''}`}>Exam:</span>
-                <span className={`summary-value ${darkMode ? 'dark:text-gray-200' : ''}`}>{formData.examTarget}</span>
+              <div className="summary-item">
+                <span className="summary-label">Exam:</span>
+                <span className="summary-value">{formData.examTarget}</span>
               </div>
-              <div className={`summary-item ${darkMode ? 'dark:border-gray-600' : ''}`}>
-                <span className={`summary-label ${darkMode ? 'dark:text-gray-400' : ''}`}>Education:</span>
-                <span className={`summary-value ${darkMode ? 'dark:text-gray-200' : ''}`}>{formData.course}</span>
+              <div className="summary-item">
+                <span className="summary-label">Education:</span>
+                <span className="summary-value">{formData.course}</span>
               </div>
               {requiredPercentage && (
-                <div className={`summary-item ${darkMode ? 'dark:border-gray-600' : ''}`}>
-                  <span className={`summary-label ${darkMode ? 'dark:text-gray-400' : ''}`}>Required Marks:</span>
-                  <span className={`summary-value ${darkMode ? 'dark:text-gray-200' : ''}`}>{requiredPercentage}</span>
+                <div className="summary-item">
+                  <span className="summary-label">Required Marks:</span>
+                  <span className="summary-value">{requiredPercentage}</span>
                 </div>
               )}
-              <div className={`summary-item ${darkMode ? 'dark:border-gray-600' : ''}`}>
-                <span className={`summary-label ${darkMode ? 'dark:text-gray-400' : ''}`}>Your Marks:</span>
+              <div className="summary-item">
+                <span className="summary-label">Your Marks:</span>
                 <span className={`summary-value ${eligibilityResult.marksEligible ? 'eligible-text' : 'not-eligible-text'}`}>
                   {formData.percentageMarks}%
                 </span>
               </div>
-              <div className={`summary-item ${darkMode ? 'dark:border-gray-600' : ''}`}>
-                <span className={`summary-label ${darkMode ? 'dark:text-gray-400' : ''}`}>Category:</span>
-                <span className={`summary-value ${darkMode ? 'dark:text-gray-200' : ''}`}>{formData.caste}</span>
+              <div className="summary-item">
+                <span className="summary-label">Category:</span>
+                <span className="summary-value">{formData.caste}</span>
               </div>
               {examData?.conducting_body && (
-                <div className={`summary-item ${darkMode ? 'dark:border-gray-600' : ''}`}>
-                  <span className={`summary-label ${darkMode ? 'dark:text-gray-400' : ''}`}>Conducted by:</span>
-                  <span className={`summary-value ${darkMode ? 'dark:text-gray-200' : ''}`}>{examData.conducting_body}</span>
+                <div className="summary-item">
+                  <span className="summary-label">Conducted by:</span>
+                  <span className="summary-value">{examData.conducting_body}</span>
                 </div>
               )}
             </div>
@@ -67,10 +66,10 @@ const ResultNow = ({
           
           {/* Eligible Streams */}
           {eligibilityResult.eligibleStreams && eligibilityResult.eligibleStreams.length > 0 && (
-            <div className={`result-section-card streams-section ${darkMode ? 'dark:bg-gray-700 dark:border-gray-600' : ''}`}>
+            <div className="result-section-card streams-section">
               <div className="section-header">
-                <FaGraduationCap className={`section-icon ${darkMode ? 'dark:text-blue-400' : ''}`} />
-                <h4 className={darkMode ? 'dark:text-gray-200' : ''}>Eligible Streams ({eligibilityResult.eligibleStreams.length})</h4>
+                <FaGraduationCap className="section-icon" />
+                <h4>Eligible Streams ({eligibilityResult.eligibleStreams.length})</h4>
               </div>
               <div className="streams-grid">
                 {eligibilityResult.eligibleStreams.map((stream, index) => {
@@ -79,15 +78,15 @@ const ResultNow = ({
                   const course = courseData[stream.name];
                   
                   return (
-                    <div key={index} className={`stream-card ${darkMode ? 'dark:bg-gray-800 dark:border-blue-700' : ''}`}>
+                    <div key={index} className="stream-card">
                       <div className="stream-title">
-                        <FaUserGraduate className={`stream-icon ${darkMode ? 'dark:text-blue-400' : ''}`} /> 
-                        <span className={darkMode ? 'dark:text-gray-200' : ''}>{course?.full_form || stream.name}</span>
+                        <FaUserGraduate className="stream-icon" /> 
+                        <span>{course?.full_form || stream.name}</span>
                       </div>
                       {course?.exam_subjects && (
                         <div className="stream-detail">
-                          <MdSubject className={`detail-icon ${darkMode ? 'dark:text-gray-400' : ''}`} /> 
-                          <span className={darkMode ? 'dark:text-gray-400' : ''}>
+                          <MdSubject className="detail-icon" /> 
+                          <span>
                             {Array.isArray(course.exam_subjects.subjects) ? 
                               course.exam_subjects.subjects.join(', ') : 
                               course.exam_subjects.subjects || 'Not specified'}
@@ -95,8 +94,8 @@ const ResultNow = ({
                         </div>
                       )}
                       <div className="stream-detail">
-                        <MdSchool className={`detail-icon ${darkMode ? 'dark:text-gray-400' : ''}`} /> 
-                        <span className={darkMode ? 'dark:text-gray-400' : ''}>
+                        <MdSchool className="detail-icon" /> 
+                        <span>
                           Education: {course?.eligibility_education_course || stream.educationRequirement}
                         </span>
                       </div>
@@ -112,19 +111,19 @@ const ResultNow = ({
         <div className="result-right-column">
           {/* Age Eligibility */}
           {eligibilityResult.ageResults && eligibilityResult.ageResults.length > 0 && (
-            <div className={`result-section-card age-section ${darkMode ? 'dark:bg-gray-700 dark:border-gray-600' : ''}`}>
+            <div className="result-section-card age-section">
               <div className="section-header">
-                <FaCalendarAlt className={`section-icon ${darkMode ? 'dark:text-blue-400' : ''}`} />
-                <h4 className={darkMode ? 'dark:text-gray-200' : ''}>Age Eligibility</h4>
+                <FaCalendarAlt className="section-icon" />
+                <h4>Age Eligibility</h4>
               </div>
-              <div className={`age-summary ${darkMode ? 'dark:text-gray-300' : ''}`}>
-                <span className={`dob-label ${darkMode ? 'dark:text-gray-400' : ''}`}>Your Date of Birth:</span>
-                <span className={`dob-value ${darkMode ? 'dark:bg-gray-800 dark:text-gray-200' : ''}`}>
+              <div className="age-summary">
+                <span className="dob-label">Your Date of Birth:</span>
+                <span className="dob-value">
                   {new Date(formData.dateOfBirth).toLocaleDateString()}
                 </span>
               </div>
-              <div className={`age-table ${darkMode ? 'dark:border-gray-600' : ''}`}>
-                <div className={`age-table-header ${darkMode ? 'dark:bg-gray-800 dark:text-gray-300' : ''}`}>
+              <div className="age-table">
+                <div className="age-table-header">
                   <div className="age-cycle">Exam Cycle</div>
                   <div className="age-stream">Stream</div>
                   <div className="age-status">Status</div>
@@ -132,20 +131,14 @@ const ResultNow = ({
                 {eligibilityResult.ageResults.map((result, index) => (
                   <div 
                     key={index} 
-                    className={`age-table-row ${result.eligible ? 'eligible-row' : 'not-eligible-row'} ${
-                      darkMode 
-                        ? result.eligible 
-                          ? 'dark:bg-green-900 dark:bg-opacity-20' 
-                          : 'dark:bg-red-900 dark:bg-opacity-20'
-                        : ''
-                    }`}
+                    className={`age-table-row ${result.eligible ? 'eligible-row' : 'not-eligible-row'}`}
                   >
-                    <div className={`age-cycle ${darkMode ? 'dark:text-gray-300' : ''}`}>{result.cycle}</div>
-                    <div className={`age-stream ${darkMode ? 'dark:text-gray-300' : ''}`}>{result.stream}</div>
+                    <div className="age-cycle">{result.cycle}</div>
+                    <div className="age-stream">{result.stream}</div>
                     <div className="age-status">
                       {result.eligible ? 
-                        <><FaCheckCircle className="status-icon eligible-icon" /> <span className={darkMode ? 'dark:text-green-400' : ''}>Eligible</span></> : 
-                        <><FaTimesCircle className="status-icon not-eligible-icon" /> <span className={darkMode ? 'dark:text-red-400' : ''}>Not Eligible</span></>
+                        <><FaCheckCircle className="status-icon eligible-icon" /> <span>Eligible</span></> : 
+                        <><FaTimesCircle className="status-icon not-eligible-icon" /> <span>Not Eligible</span></>
                       }
                     </div>
                   </div>

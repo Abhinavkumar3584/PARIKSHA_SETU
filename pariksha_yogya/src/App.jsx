@@ -13,11 +13,10 @@ import Signup from "./Pages/signup";
 // import PrivacyPolicy from "./Pages/privacypolicy";
 import TermsAndConditions from "./Pages/termsandconditions";
 import RefundPolicy from "./Pages/refundpolicy";
-import { ThemeProvider } from "./components/ui/theme-toggle";
 
 function App() {
   return (
-    <ThemeProvider>
+    <>
       <HeroUIProvider className="w-full mx-0 px-0 overflow-x-hidden">
         <div className="animated-background">
           <div className="line-grid"></div>
@@ -44,7 +43,7 @@ function App() {
           <Route path="/refund-policy" element={<RefundPolicy />} />
         </Routes>
       </HeroUIProvider>
-    </ThemeProvider>
+    </>
   );
 }
 

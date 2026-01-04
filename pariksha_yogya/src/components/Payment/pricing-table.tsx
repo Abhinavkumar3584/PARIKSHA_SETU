@@ -73,24 +73,24 @@ export function PricingTable({
       )}
     >
       <div
-        className={cn("w-full  mx-auto px-2 sm:px-4 rounded-lg bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950 shadow-sm", containerClassName)}
+        className={cn("w-full  mx-auto px-2 sm:px-4 rounded-lg bg-gradient-to-b from-gray-50 to-white shadow-sm", containerClassName)}
         {...props}
       >
         {/* Billing toggle */}
         <div className="flex flex-col items-center justify-center mb-3 sm:mb-5 pt-3">
           <h2 className="text-xl sm:text-2xl font-bold mb-2 text-center">Choose Your Plan</h2>
-          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-3 text-center max-w-md">
+          <p className="text-xs sm:text-sm text-gray-500 mb-3 text-center max-w-md">
             Select the perfect plan for your needs
           </p>
-          <div className="inline-flex items-center gap-2 p-0.5 rounded-full bg-gray-100 dark:bg-gray-800">
+          <div className="inline-flex items-center gap-2 p-0.5 rounded-full bg-gray-100">
             <button
               type="button"
               onClick={() => setIsYearly(false)}
               className={cn(
                 "px-3 py-1 rounded-full transition-all text-xs font-medium",
                 !isYearly 
-                  ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-blue-400" 
-                  : "text-gray-500 hover:text-gray-800 dark:hover:text-gray-300"
+                  ? "bg-white shadow-sm text-blue-600" 
+                  : "text-gray-500 hover:text-gray-800"
               )}
             >
               Monthly
@@ -101,8 +101,8 @@ export function PricingTable({
               className={cn(
                 "px-3 py-1 rounded-full transition-all text-xs font-medium relative",
                 isYearly 
-                  ? "bg-white dark:bg-gray-700 shadow-sm text-blue-600 dark:text-blue-400"
-                  : "text-gray-500 hover:text-gray-800 dark:hover:text-gray-300"
+                  ? "bg-white shadow-sm text-blue-600"
+                  : "text-gray-500 hover:text-gray-800"
               )}
             >
               <span>Yearly</span>
@@ -126,12 +126,12 @@ export function PricingTable({
                   onClick={() => handlePlanSelect(plan.level)}
                   className={cn(
                     "p-2 sm:p-3 rounded-lg text-left transition-all flex-1 group relative overflow-hidden",
-                    "border border-gray-200 dark:border-gray-800",
-                    "hover:shadow-sm hover:border-gray-300 dark:hover:border-gray-700",
+                    "border border-gray-200",
+                    "hover:shadow-sm hover:border-gray-300",
                     selectedPlan === plan.level && 
-                      "ring-1 ring-blue-500 dark:ring-blue-400 shadow-sm",
+                      "ring-1 ring-blue-500 shadow-sm",
                     plan.popular && plan.level !== selectedPlan &&
-                      "border-blue-100 dark:border-blue-900 bg-gradient-to-br from-blue-50 to-white dark:from-blue-900/20 dark:to-gray-900",
+                      "border-blue-100 bg-gradient-to-br from-blue-50 to-white",
                   )}
                 >
                   {plan.popular && (
@@ -157,18 +157,18 @@ export function PricingTable({
                       value={isYearly ? plan.price.yearly : plan.price.monthly}
                       className="text-xl sm:text-2xl font-bold"
                     />
-                    <span className="text-[10px] sm:text-xs font-normal text-gray-500 dark:text-gray-400">
+                    <span className="text-[10px] sm:text-xs font-normal text-gray-500">
                       /{isYearly ? "year" : "month"}
                     </span>
                   </div>
                   
                   {isYearly && (
-                    <div className="text-[9px] text-green-600 dark:text-green-400 mb-1">
+                    <div className="text-[9px] text-green-600 mb-1">
                       Save ${(plan.price.monthly * 12) - plan.price.yearly} annually
                     </div>
                   )}
                   
-                  <div className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">
+                  <div className="text-[10px] sm:text-xs text-gray-500">
                     {plan.level === "starter" ? "For individuals & small teams" : 
                      plan.level === "pro" ? "For growing businesses" : 
                      "For large enterprises"}
@@ -192,10 +192,10 @@ export function PricingTable({
           </div>
 
           {/* Features column */}
-          <div className="border border-[rgba(0,0,0,0.4)] dark:border-gray-800 rounded-lg overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
+          <div className="border border-[rgba(0,0,0,0.4)] rounded-lg overflow-hidden bg-white shadow-sm">
             <div className="overflow-x-auto">
-              <div className="min-w-[240px] divide-y divide-gray-200 dark:divide-gray-800">
-                <div className="flex items-center py-1.5 px-2 bg-gray-50 dark:bg-gray-900 sticky top-0">
+              <div className="min-w-[240px] divide-y divide-gray-200">
+                <div className="flex items-center py-1.5 px-2 bg-gray-50 sticky top-0">
                   <div className="flex-1 text-xs font-semibold">Features</div>
                   <div className="flex items-center gap-6 text-xs">
                     {plans.map((plan) => (
@@ -215,8 +215,8 @@ export function PricingTable({
                     className={cn(
                       "flex items-center py-2 px-2 transition-colors",
                       feature.included === selectedPlan &&
-                        "bg-blue-50/50 dark:bg-blue-900/10",
-                      index % 2 === 0 && "bg-gray-50/50 dark:bg-gray-900/20"
+                        "bg-blue-50/50",
+                      index % 2 === 0 && "bg-gray-50/50"
                     )}
                   >
                     <div className="flex-1 text-sm">{feature.name}</div>
@@ -232,14 +232,14 @@ export function PricingTable({
                           {shouldShowCheck(feature.included, plan.level) ? (
                             <div className={cn(
                               "rounded-full w-4 h-4 flex items-center justify-center",
-                              plan.level === "starter" ? "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300" :
-                              plan.level === "pro" ? "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300" :
-                              "bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300"
+                              plan.level === "starter" ? "bg-gray-100 text-gray-700" :
+                              plan.level === "pro" ? "bg-blue-100 text-blue-700" :
+                              "bg-purple-100 text-purple-700"
                             )}>
                               <CheckIcon className="w-2.5 h-2.5" />
                             </div>
                           ) : (
-                            <span className="text-gray-300 dark:text-gray-700">
+                            <span className="text-gray-300">
                               —
                             </span>
                           )}

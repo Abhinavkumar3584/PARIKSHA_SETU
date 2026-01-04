@@ -25,7 +25,6 @@ module.exports = {
       }
     },
   },
-  darkMode: "class",
   plugins: [
     heroui(),
     addVariablesForColors,

@@ -3,7 +3,6 @@ import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import login from "../../Pages/login";
 import signup from "../../Pages/signup";
-import { ThemeToggle } from "../ui/theme-toggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,8 +35,8 @@ const Navbar = () => {
       <nav
         className={`max-w-8xl px-4 sm:px-2 md:px-4 py-1.5 rounded-lg shadow-lg transition-all duration-300 
           ${
-            isScrolled ? "backdrop-blur-lg bg-white/15 dark:bg-gray-900/75" : "bg-white dark:bg-gray-900"
-          } border border-gray-300 dark:border-gray-700`}
+            isScrolled ? "backdrop-blur-lg bg-white/15" : "bg-white"
+          } border border-gray-300`}
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center h-10 sm:h-12">
           {/* Logo and Brand */}
@@ -56,19 +55,19 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6 items-center">
-            <a href="/" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">
+            <a href="/" className="text-gray-700 hover:text-blue-500">
               Home
             </a>
-            <a href="/about" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">
+            <a href="/about" className="text-gray-700 hover:text-blue-500">
               About Us
             </a>
             <a
               href="/contribution"
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+              className="text-gray-700 hover:text-blue-500"
             >
               Contribution
             </a>
-            <a href="/contact" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">
+            <a href="/contact" className="text-gray-700 hover:text-blue-500">
               Contact Us
             </a>
 
@@ -76,7 +75,7 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 focus:outline-none"
+                className="flex items-center text-gray-700 hover:text-blue-500 focus:outline-none"
               >
                 Features
                 <ChevronDown
@@ -88,7 +87,7 @@ const Navbar = () => {
 
               {/* Dropdown Items with Animation */}
               <div
-                className={`absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-lg z-50 transition-all duration-300 transform origin-top 
+                className={`absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg z-50 transition-all duration-300 transform origin-top 
                       ${
                         isDropdownOpen
                           ? "opacity-100 scale-y-100"
@@ -97,27 +96,24 @@ const Navbar = () => {
               >
                 <a
                   href="/"
-                  className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                 >
                   PARIKSHA YOGYA
                 </a>
                 <a
                   href="https://marg.psetu.com/"
-                  className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                 >
                   PARIKSHA MARG
                 </a>
                 <a
                   href="#"
-                  className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                 >
                   PARIKSHA GYAN
                 </a>
               </div>
             </div>
-
-            {/* Theme Toggle */}
-            <ThemeToggle />
 
             {/* Search Bar */}
             <input
@@ -134,15 +130,10 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            {/* Theme Toggle - Visible on mobile too */}
-            <div className="md:hidden">
-              <ThemeToggle />
-            </div>
-
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden text-gray-700 dark:text-gray-300 p-2 focus:outline-none"
+              className="md:hidden text-gray-700 p-2 focus:outline-none"
               aria-expanded={isOpen}
               aria-label="Toggle menu"
             >
@@ -153,7 +144,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden bg-white dark:bg-gray-800 border-t dark:border-gray-700 absolute left-4 right-4 shadow-md rounded-b-lg overflow-hidden transition-all duration-300 ease-in-out ${
+          className={`md:hidden bg-white border-t absolute left-4 right-4 shadow-md rounded-b-lg overflow-hidden transition-all duration-300 ease-in-out ${
             isOpen
               ? "max-h-[500px] opacity-100"
               : "max-h-0 opacity-0 pointer-events-none"
@@ -162,25 +153,25 @@ const Navbar = () => {
           <div className="py-2 animate-fadeIn">
             <a
               href="/"
-              className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-center"
             >
               Home
             </a>
             <a
               href="/about"
-              className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-center"
             >
               About Us
             </a>
             <a
               href="/contribution"
-              className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-center"
             >
               Contribution
             </a>
             <a
               href="/contact"
-              className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-center"
             >
               Contact Us
             </a>
@@ -189,7 +180,7 @@ const Navbar = () => {
             <div className="px-4 py-1">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="w-full text-center py-2 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 focus:outline-none"
+                className="w-full text-center py-2 flex items-center justify-center text-gray-700 hover:text-blue-500 focus:outline-none"
               >
                 Features
                 <ChevronDown
@@ -199,7 +190,7 @@ const Navbar = () => {
                 />
               </button>
               <div
-                className={`mt-1 bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${
+                className={`mt-1 bg-gray-50 rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${
                   isDropdownOpen
                     ? "max-h-[200px] opacity-100"
                     : "max-h-0 opacity-0"
@@ -207,19 +198,19 @@ const Navbar = () => {
               >
                 <a
                   href="/"
-                  className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center"
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-center"
                 >
                   PARIKSHA YOGYA
                 </a>
                 <a
                   href="https://marg.psetu.com/"
-                  className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center"
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-center"
                 >
                   PARIKSHA MARG
                 </a>
                 <a
                   href="#"
-                  className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center"
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-center"
                 >
                   PARIKSHA GYAN
                 </a>

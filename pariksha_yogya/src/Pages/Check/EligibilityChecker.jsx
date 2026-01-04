@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { getExamNames, getExamData } from '../../Examsdata/codes';
 import FormInput from './FormInput';
 import ResultNow from './ResultNow';
-import { useTheme } from '../../components/ui/theme-toggle';
 import './FormStyles.css';
 
 // ==================== UTILITY FUNCTIONS ====================
@@ -348,8 +347,6 @@ const checkEligibility = (formData, examData, getStreamOptions) => {
 // ==================== MAIN COMPONENT ====================
 
 const EligibilityChecker = () => {
-  const { theme } = useTheme();
-  const darkMode = theme === 'dark';
   // State management
   const [formData, setFormData] = useState({
     examTarget: '',
@@ -364,7 +361,9 @@ const EligibilityChecker = () => {
     pwdStatus: '',
     examSector: '',
     percentageMarks: '',
-    cplHolder: ''
+    cplHolder: '',
+    backlogs: '',
+    gapYears: ''
   });
   
   const [examData, setExamData] = useState(null);
@@ -578,7 +577,9 @@ const EligibilityChecker = () => {
       pwdStatus: defaultPwdStatus,
       examSector: data?.exam_sector || '',
       percentageMarks: '',
-      cplHolder: ''
+      cplHolder: '',
+      backlogs: '',
+      gapYears: ''
     });
     
     // Reset results
@@ -608,11 +609,11 @@ const EligibilityChecker = () => {
   // ==================== RENDER ====================
 
   return (
-    <div className={`w-full min-h-screen pt-20 pb-8 px-3 ${darkMode ? 'bg-gray-900' : 'bg-gray-40'}`}>
+    <div className="w-full min-h-screen pt-20 pb-8 px-3 bg-gray-40">
       <div className="w-full max-w-7xl mx-auto">
         <form className="w-full" onSubmit={handleSubmit}>
-          <div className={`styled-form container border-gradient w-full p-4 md:p-6 rounded-lg ${darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-400'} shadow` }>
-            <h2 className={`text-xl md:text-2xl font-semibold text-center mb-6 ${darkMode ? "text-gray-600" : "text-gray-800"}`}>Check Your Eligibility</h2>
+          <div className="styled-form w-full p-4 md:p-6 rounded-lg bg-white border border-gray-400 shadow">
+            <h2 className="text-xl md:text-2xl font-semibold text-center mb-6 text-gray-800">Check Your Eligibility</h2>
             
             {/* Row with 4 inputs - Responsive Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
@@ -625,7 +626,6 @@ const EligibilityChecker = () => {
                   required 
                   value={formData.examTarget}
                   onChange={handleExamChange}
-                  darkMode={darkMode}
                 />
               </div>
 
@@ -637,7 +637,6 @@ const EligibilityChecker = () => {
                   required 
                   value={formData.dateOfBirth}
                   onChange={handleInputChange}
-                  darkMode={darkMode}
                 />
               </div>
               
@@ -651,7 +650,6 @@ const EligibilityChecker = () => {
                   value={formData.gender}
                   onChange={handleInputChange}
                   disabled={!examData}
-                  darkMode={darkMode}
                 />
               </div>
               
@@ -665,13 +663,12 @@ const EligibilityChecker = () => {
                   value={formData.maritalStatus}
                   onChange={handleInputChange}
                   disabled={!examData}
-                  darkMode={darkMode}
                 />
               </div>
             </div>
           
-            {/* Row with 2 inputs - Responsive Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+            {/* Row 2 - Nationality, Domicile, Caste/Category, PWD/Disabled Status */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
               <div>
                 <FormInput 
                   label="Nationality" 
@@ -682,7 +679,6 @@ const EligibilityChecker = () => {
                   value={formData.nationality}
                   onChange={handleInputChange}
                   disabled={!examData}
-                  darkMode={darkMode}
                 />
               </div>
               
@@ -696,13 +692,38 @@ const EligibilityChecker = () => {
                   value={formData.domicile}
                   onChange={handleInputChange}
                   disabled={true}
-                  darkMode={darkMode}
+                />
+              </div>
+
+              <div>
+                <FormInput 
+                  label="Caste/Category" 
+                  type="select" 
+                  options={casteOptions} 
+                  name="caste" 
+                  required 
+                  value={formData.caste}
+                  onChange={handleInputChange}
+                  disabled={!examData}
+                />
+              </div>
+
+              <div>
+                <FormInput 
+                  label="PWD/Disabled Status" 
+                  type="select" 
+                  options={pwdOptions} 
+                  name="pwdStatus" 
+                  required 
+                  value={formData.pwdStatus}
+                  onChange={handleInputChange}
+                  disabled={!examData || !getPwdOptions().includes("Yes")}
                 />
               </div>
             </div>
           
-            {/* Row with 3 inputs - Responsive Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
+            {/* Row 3 - Education Qualification, Year, Percentage Marks, Backlogs, Gap Years */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 mb-4">
               <div>
                 <FormInput 
                   label="Education Qualification" 
@@ -713,7 +734,6 @@ const EligibilityChecker = () => {
                   value={formData.course}
                   onChange={handleInputChange}
                   disabled={!examData || courseOptions.length === 0}
-                  darkMode={darkMode}
                 />
               </div>
               
@@ -727,21 +747,44 @@ const EligibilityChecker = () => {
                   value={formData.yearSemester}
                   onChange={handleInputChange}
                   disabled={!examData}
-                  darkMode={darkMode}
                 />
               </div>
               
               <div>
                 <FormInput 
-                  label="Caste/Category" 
-                  type="select" 
-                  options={casteOptions} 
-                  name="caste" 
+                  label="Percentage Marks" 
+                  type="number"
+                  name="percentageMarks" 
                   required 
-                  value={formData.caste}
+                  value={formData.percentageMarks}
                   onChange={handleInputChange}
                   disabled={!examData}
-                  darkMode={darkMode}
+                />
+              </div>
+
+              <div>
+                <FormInput 
+                  label="Active Backlogs" 
+                  type="select" 
+                  options={["No Backlogs", "1-2 Backlogs", "3-5 Backlogs", "More than 5 Backlogs"]} 
+                  name="backlogs" 
+                  required 
+                  value={formData.backlogs}
+                  onChange={handleInputChange}
+                  disabled={!examData}
+                />
+              </div>
+
+              <div>
+                <FormInput 
+                  label="Gap Years" 
+                  type="select" 
+                  options={["No Gap", "1 Year", "2 Years", "3 Years", "More than 3 Years"]} 
+                  name="gapYears" 
+                  required 
+                  value={formData.gapYears}
+                  onChange={handleInputChange}
+                  disabled={!examData}
                 />
               </div>
             </div>
@@ -759,41 +802,234 @@ const EligibilityChecker = () => {
                     value={formData.cplHolder}
                     onChange={handleInputChange}
                     disabled={!examData}
-                    darkMode={darkMode}
                   />
                 </div>
                 <div></div>
                 <div></div>
               </div>
             )}
-          
-            {/* Row with 2 inputs - Responsive Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
-              <div>
-                <FormInput 
-                  label="PWD/Disabled Status" 
-                  type="select" 
-                  options={pwdOptions} 
-                  name="pwdStatus" 
-                  required 
-                  value={formData.pwdStatus}
-                  onChange={handleInputChange}
-                  disabled={!examData || !getPwdOptions().includes("Yes")}
-                  darkMode={darkMode}
-                />
-              </div>
+
+            {/* Additional Fields Section - UI Only (Not Connected to Backend) */}
+            <div className="mt-6 pt-4 border-t border-gray-200">
+              <p className="text-xs text-red-500 font-medium mb-3 text-center italic">⚠️ Fields below are not working yet - Coming Soon</p>
               
-              <div>
-                <FormInput 
-                  label="Percentage Marks" 
-                  type="number"
-                  name="percentageMarks" 
-                  required 
-                  value={formData.percentageMarks}
-                  onChange={handleInputChange}
-                  disabled={!examData}
-                  darkMode={darkMode}
-                />
+              {/* Row - Highest Education, Education Course, Education Stream */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
+                <div>
+                  <FormInput 
+                    label="Highest Education Qualification" 
+                    type="select" 
+                    options={["10th (Matriculation)", "12th (Intermediate)", "Diploma", "UG (Undergraduate/Bachelor's)", "PG (Postgraduate/Master's)", "PhD/Doctorate"]} 
+                    name="highestEducation" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+                <div>
+                  <FormInput 
+                    label="Education Course" 
+                    type="select" 
+                    options={["B.A.", "B.Sc.", "B.Com", "B.Tech/B.E.", "BBA", "BCA", "MBBS", "LLB", "B.Ed", "B.Pharm", "M.A.", "M.Sc.", "M.Com", "M.Tech/M.E.", "MBA", "MCA", "M.Phil", "Other"]} 
+                    name="educationCourse" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+                <div>
+                  <FormInput 
+                    label="Education Stream" 
+                    type="select" 
+                    options={["Science", "Commerce", "Arts/Humanities", "Engineering - CSE/IT", "Engineering - Mechanical", "Engineering - Electrical", "Engineering - Civil", "Engineering - Electronics", "Engineering - Other", "Medical", "Law", "Management", "Agriculture", "Other"]} 
+                    name="educationStream" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+              </div>
+
+              {/* Row - Ex-Serviceman, Height, Weight, Vision */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
+                <div>
+                  <FormInput 
+                    label="Ex-Serviceman Status" 
+                    type="select" 
+                    options={["No", "Yes - Ex-Serviceman", "Ward of Ex-Serviceman", "War Widow/Widower"]} 
+                    name="exServiceman" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+                <div>
+                  <FormInput 
+                    label="Height (in cm)" 
+                    type="number" 
+                    name="height" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+                <div>
+                  <FormInput 
+                    label="Weight (in kg)" 
+                    type="number" 
+                    name="weight" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+                <div>
+                  <FormInput 
+                    label="Vision/Eyesight" 
+                    type="select" 
+                    options={["Normal (6/6)", "6/9", "6/12", "6/18", "6/24", "6/36", "Correctable with Glasses", "Color Blind", "Night Blindness"]} 
+                    name="vision" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+              </div>
+
+              {/* Row - Employment Status, Work Experience, 10th %, 12th % */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
+                <div>
+                  <FormInput 
+                    label="Current Employment Status" 
+                    type="select" 
+                    options={["Unemployed", "Government Employee - Central", "Government Employee - State", "Government Employee - PSU", "Private Sector Employee", "Self Employed"]} 
+                    name="employmentStatus" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+                <div>
+                  <FormInput 
+                    label="Work Experience (Years)" 
+                    type="number" 
+                    name="workExperience" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+                <div>
+                  <FormInput 
+                    label="10th Percentage" 
+                    type="number" 
+                    name="percentage10th" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+                <div>
+                  <FormInput 
+                    label="12th Percentage" 
+                    type="number" 
+                    name="percentage12th" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+              </div>
+
+              {/* Row - 10th Subjects, 12th Subjects */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+                <div>
+                  <FormInput 
+                    label="Subjects Studied at 10th Level" 
+                    type="select" 
+                    options={["Standard (All Subjects)", "With Sanskrit", "With Hindi", "With Computer", "Other Regional Language"]} 
+                    name="subjects10th" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+                <div>
+                  <FormInput 
+                    label="Subjects Studied at 12th Level" 
+                    type="select" 
+                    options={["PCM (Physics, Chemistry, Maths)", "PCB (Physics, Chemistry, Biology)", "PCMB (Physics, Chemistry, Maths, Biology)", "Commerce with Maths", "Commerce without Maths", "Arts/Humanities", "Vocational"]} 
+                    name="subjects12th" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+              </div>
+
+              {/* Row - Language Proficiency, Driving License, NCC Certificate, NCC Grade */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
+                <div>
+                  <FormInput 
+                    label="Language Proficiency" 
+                    type="select" 
+                    options={["Hindi Only", "English Only", "Hindi & English", "Hindi, English & Regional", "Regional Language Only"]} 
+                    name="languageProficiency" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+                <div>
+                  <FormInput 
+                    label="Driving License Type" 
+                    type="select" 
+                    options={["None", "Two Wheeler Only", "LMV (Car/Jeep)", "HMV (Truck/Bus)", "LMV + HMV", "Transport Vehicle"]} 
+                    name="drivingLicense" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+                <div>
+                  <FormInput 
+                    label="NCC Certificate" 
+                    type="select" 
+                    options={["None", "Yes - Army Wing", "Yes - Navy Wing", "Yes - Air Force Wing"]} 
+                    name="nccCertificate" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+                <div>
+                  <FormInput 
+                    label="NCC Certificate Grade" 
+                    type="select" 
+                    options={["Not Applicable", "A Certificate", "B Certificate", "C Certificate"]} 
+                    name="nccGrade" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+              </div>
+
+              {/* Row - Sports Quota */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
+                <div>
+                  <FormInput 
+                    label="Sports Quota Eligibility" 
+                    type="select" 
+                    options={["Not Applicable", "International Level", "National Level", "State Level", "University Level", "District Level"]} 
+                    name="sportsQuota" 
+                    value=""
+                    onChange={() => {}}
+                    disabled={false}
+                  />
+                </div>
+                <div></div>
+                <div></div>
               </div>
             </div>
 
@@ -808,7 +1044,6 @@ const EligibilityChecker = () => {
                 examData={examData}
                 formData={formData}
                 requiredPercentage={requiredPercentage}
-                darkMode={darkMode}
               />
             )}
           </div>

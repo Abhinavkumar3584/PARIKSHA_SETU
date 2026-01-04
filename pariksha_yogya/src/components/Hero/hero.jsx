@@ -85,7 +85,7 @@ function Hero() {
 
   return (
     <div
-      className="w-full pt-16 md:pt-20 dark:bg-gray-900"
+      className="w-full pt-16 md:pt-20"
       style={{
         background:
           "linear-gradient(143.6deg, rgba(192, 132, 252, 0) 20.79%, rgba(232, 121, 249, 0.26) 40.92%, rgba(204, 171, 238, 0) 70.35%)",
@@ -96,7 +96,7 @@ function Hero() {
         <div className="flex flex-col gap-8 py-10 lg:py-20 items-center justify-center">
           <div className="flex flex-col gap-4 text-center">
             <h1 className="text-3xl sm:text-5xl md:text-7xl max-w-7xl tracking-tighter font-regular">
-              <span className="text-spektr-cyan-50 font-semibold dark:text-gray-100">
+              <span className="text-spektr-cyan-50 font-semibold">
                 Know your Competitive exam eligibility & attempts with{" "}
               </span>
               <div>
@@ -132,7 +132,7 @@ function Hero() {
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link to="/Check/checknow">
-              <Button size="lg" className="gap-4 bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-700 dark:hover:bg-blue-800">
+              <Button size="lg" className="gap-4 bg-blue-600 hover:bg-blue-700 text-white">
                 Check Now <MoveRight className="w-4 h-4" />
               </Button>
             </Link>

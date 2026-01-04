@@ -126,16 +126,16 @@ const AboutUs = () => {
   } */
 `}</style>
 
-<div className="bg-gray-100 dark:bg-gray-900 py-12 pb-0 px-4 sm:px-6 lg:px-8">
+<div className="bg-gray-100 py-12 pb-0 px-4 sm:px-6 lg:px-8">
   {/* About Us Section - MODERNIZED */}
-  <div className="w-full max-w-[1280px] mx-auto p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-[20px] shadow-lg mt-8 relative overflow-hidden">
+  <div className="w-full max-w-[1280px] mx-auto p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-white to-gray-50 rounded-[20px] shadow-lg mt-8 relative overflow-hidden">
     {/* Decorative Elements - Modified positioning */}
-    <div className="absolute top-0 left-0 w-20 h-20 bg-blue-50 dark:bg-blue-900/30 rounded-full opacity-30 -translate-x-1/3 -translate-y-1/3"></div>
-    <div className="absolute bottom-0 right-0 w-32 h-32 bg-green-50 dark:bg-green-900/30 rounded-full opacity-30 translate-x-1/3 translate-y-1/3"></div>
+    <div className="absolute top-0 left-0 w-20 h-20 bg-blue-50 rounded-full opacity-30 -translate-x-1/3 -translate-y-1/3"></div>
+    <div className="absolute bottom-0 right-0 w-32 h-32 bg-green-50 rounded-full opacity-30 translate-x-1/3 translate-y-1/3"></div>
     
     {/* Heading with Underline */}
     <div className="relative">
-      <h2 className="text-center text-gray-800 dark:text-gray-100 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+      <h2 className="text-center text-gray-800 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
         About Us
       </h2>
       <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-green-500 mx-auto mt-3 rounded-full"></div>
@@ -144,18 +144,18 @@ const AboutUs = () => {
   {/* Content Wrapper */}
   <div className="mt-8 flex flex-col items-center gap-8 relative">
     {/* Founders Introduction - NEW */}
-    <div className="w-full p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500 dark:border-blue-600">
-      <p className="text-gray-700 dark:text-gray-300 italic leading-relaxed">
-        We, <span className="font-semibold text-blue-700 dark:text-blue-400">Abhinav Kumar</span> and <span className="font-semibold text-blue-700 dark:text-blue-400">Manu Dev</span>, welcome you to our platform <span className="font-semibold">Pratiyogita Setu</span>, which we have created to help aspirants and students to crack their targeted exams.
+    <div className="w-full p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+      <p className="text-gray-700 italic leading-relaxed">
+        We, <span className="font-semibold text-blue-700">Abhinav Kumar</span> and <span className="font-semibold text-blue-700">Manu Dev</span>, welcome you to our platform <span className="font-semibold">Pratiyogita Setu</span>, which we have created to help aspirants and students to crack their targeted exams.
       </p>
-      <p className="mt-3 text-gray-700 dark:text-gray-300 italic leading-relaxed">
+      <p className="mt-3 text-gray-700 italic leading-relaxed">
         In INDIA every year, on average, about <span className="font-semibold">10 million students and aspirants</span> prepare for more than <span className="font-semibold">3000+ competitive exams</span> for different forces, posts, groups, and departments.
       </p>
     </div>
     
     {/* Text Section - Now With Highlights */}
-    <div className="w-full text-justify text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed">
-      <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center lg:text-left text-gray-800 dark:text-gray-100 relative">
+    <div className="w-full text-justify text-gray-700 text-base sm:text-lg leading-relaxed">
+      <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center lg:text-left text-gray-800 relative">
         Know Your Eligibility, Plan Strategically, and Maximize Your Chances
         <span className="block h-1 w-16 bg-green-500 mt-3 rounded-full"></span>
       </h3>
@@ -165,38 +165,38 @@ const AboutUs = () => {
       </p>
       
       <p className="mb-4">
-        At <strong className="text-blue-700 dark:text-blue-400">Pariksha Yogya</strong>, we believe that accurate information is the first step towards success. Our platform offers a comprehensive eligibility assessment tool that allows aspirants to:
+        At <strong className="text-blue-700">Pariksha Yogya</strong>, we believe that accurate information is the first step towards success. Our platform offers a comprehensive eligibility assessment tool that allows aspirants to:
       </p>
       
       <ul className="mb-6 pl-6">
         <li className="flex items-start mb-3">
-          <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center mr-3">
-            <span className="text-green-800 dark:text-green-400">✓</span>
+          <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3">
+            <span className="text-green-800">✓</span>
           </span>
           <span>Check their eligibility for various competitive exams based on age, qualification, and category.</span>
         </li>
         <li className="flex items-start mb-3">
-          <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center mr-3">
-            <span className="text-green-800 dark:text-green-400">✓</span>
+          <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3">
+            <span className="text-green-800">✓</span>
           </span>
           <span>Calculate the number of attempts remaining to help them plan their preparation accordingly.</span>
         </li>
         <li className="flex items-start mb-3">
-          <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center mr-3">
-            <span className="text-green-800 dark:text-green-400">✓</span>
+          <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3">
+            <span className="text-green-800">✓</span>
           </span>
           <span>Discover alternative exams with a similar syllabus, ensuring they don't limit their career options.</span>
         </li>
       </ul>
       
-      <div className="p-5 bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 border-l-4 border-blue-500 dark:border-blue-600 rounded-r mb-6">
+      <div className="p-5 bg-gradient-to-r from-gray-50 to-white border-l-4 border-blue-500 rounded-r mb-6">
         <p className="mb-0">
-          With a user-friendly interface and AI-powered analysis, <strong className="text-blue-700 dark:text-blue-400">Pariksha Yogya</strong> ensures that every aspirant makes informed decisions about their exam strategy. If a candidate has limited attempts left, they can prioritize their studies and accelerate their preparation. If they are ineligible, they will be suggested alternative exams that match their educational background and interests.
+          With a user-friendly interface and AI-powered analysis, <strong className="text-blue-700">Pariksha Yogya</strong> ensures that every aspirant makes informed decisions about their exam strategy. If a candidate has limited attempts left, they can prioritize their studies and accelerate their preparation. If they are ineligible, they will be suggested alternative exams that match their educational background and interests.
         </p>
       </div>
       
       <p className="mb-0">
-        By eliminating confusion and uncertainty, <strong className="text-blue-700 dark:text-blue-400">Pariksha Yogya</strong> empowers aspirants to take charge of their future with clarity, confidence, and strategic planning. With the right insights at the right time, they can maximize their opportunities and achieve their dream careers.
+        By eliminating confusion and uncertainty, <strong className="text-blue-700">Pariksha Yogya</strong> empowers aspirants to take charge of their future with clarity, confidence, and strategic planning. With the right insights at the right time, they can maximize their opportunities and achieve their dream careers.
       </p>
     </div>
   </div>
@@ -205,7 +205,7 @@ const AboutUs = () => {
         {/* Meet The Team Section */}
         <div className="w-full max-w-[1280px] mx-auto p-4 sm:p-8 lg:p-6 mt-4">
           {/* Heading */}
-          <h2 className="text-center text-black dark:text-white text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+          <h2 className="text-center text-black text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
             Meet the Team
           </h2>
 
@@ -222,7 +222,7 @@ const AboutUs = () => {
                 </div>
 
                 {/* Profile Picture */}
-                <div className="w-[200px] h-[250px] bg-gray-300 dark:bg-gray-700 rounded-[20px] overflow-hidden flex items-center justify-center">
+                <div className="w-[200px] h-[250px] bg-gray-300 rounded-[20px] overflow-hidden flex items-center justify-center">
                   <img 
                     src={member.image} 
                     alt={member.role} 
@@ -235,7 +235,7 @@ const AboutUs = () => {
                 </div>
                 
                 {/* Member Name */}
-                <h3 className="text-gray-700 dark:text-gray-200 text-s sm:text-1xl font-bold leading-7 mt-3">
+                <h3 className="text-gray-700 text-s sm:text-1xl font-bold leading-7 mt-3">
                   {member.name}
                 </h3>
 
@@ -247,12 +247,12 @@ const AboutUs = () => {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer" 
-                      className="w-8 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                      className="w-8 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
                     >
                       <img 
                         src={socialIcons[social.type]} 
                         alt={social.type} 
-                        className="w-5 h-5 invert-0 dark:invert" 
+                        className="w-5 h-5 invert-0" 
                       />
                     </a>
                   ))}

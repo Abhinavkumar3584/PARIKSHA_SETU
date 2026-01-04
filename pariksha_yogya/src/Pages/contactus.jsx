@@ -36,27 +36,27 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 pt-18 md:pt-18 px-3 sm:px-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 pt-18 md:pt-18 px-3 sm:px-4">
       <div className="max-w-5xl mx-auto">
         {/* Page Header */}
         <div className="text-center mb-4">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-800 dark:text-gray-100 tracking-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-800 tracking-tight">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
               Get In Touch
             </span>
           </h1>
-          <p className="mt-2 max-w-2xl mx-auto text-xs md:text-sm text-gray-600 dark:text-gray-300">
+          <p className="mt-2 max-w-2xl mx-auto text-xs md:text-sm text-gray-600">
             Have questions or feedback? We're here to help! Our team will get
             back to you within 24 hours.
           </p>
         </div>
 
         {/* Main Contact Container */}
-        <div className="flex flex-col md:flex-row bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+        <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden">
           {/* Left Section - Contact Form */}
-          <div className="w-full md:w-3/5 p-3 md:p-5 border-b md:border-b-0 md:border-r border-gray-100 dark:border-gray-700">
+          <div className="w-full md:w-3/5 p-3 md:p-5 border-b md:border-b-0 md:border-r border-gray-100">
             <div className="mb-3 md:mb-4">
-              <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 dark:bg-blue-900/60 text-blue-800 dark:text-blue-200 mb-2">
+              <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 mb-2">
                 <svg
                   className="w-3 h-3 mr-1"
                   fill="currentColor"
@@ -70,7 +70,7 @@ const ContactPage = () => {
                 </svg>
                 Send us a message
               </div>
-              <h2 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-gray-100 mb-1">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-1">
                 Let's Start a Conversation
               </h2>
             </div>
@@ -80,14 +80,14 @@ const ContactPage = () => {
                 <div className="relative text-left">
                   <label
                     htmlFor="firstName"
-                    className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    className="block text-xs font-medium text-gray-700 mb-1"
                   >
                     First name
                   </label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
                       <svg
-                        className="h-4 w-4 text-gray-400 dark:text-gray-500"
+                        className="h-4 w-4 text-gray-400"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -108,7 +108,7 @@ const ContactPage = () => {
                       placeholder="Your first name"
                       value={formData.firstName}
                       onChange={handleChange}
-                      className="pl-8 w-full p-2 text-xs border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 dark:bg-gray-700 dark:text-gray-200"
+                      className="pl-8 w-full p-2 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
                       required
                     />
                   </div>
@@ -116,14 +116,14 @@ const ContactPage = () => {
                 <div className="relative text-left">
                   <label
                     htmlFor="lastName"
-                    className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    className="block text-xs font-medium text-gray-700 mb-1"
                   >
                     Last name
                   </label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
                       <svg
-                        className="h-4 w-4 text-gray-400 dark:text-gray-500"
+                        className="h-4 w-4 text-gray-400"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -144,7 +144,7 @@ const ContactPage = () => {
                       placeholder="Your last name"
                       value={formData.lastName}
                       onChange={handleChange}
-                      className="pl-8 w-full p-2 text-xs border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 dark:bg-gray-700 dark:text-gray-200"
+                      className="pl-8 w-full p-2 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
                       required
                     />
                   </div>
@@ -156,14 +156,14 @@ const ContactPage = () => {
                 <div className="relative text-left">
                   <label
                     htmlFor="email"
-                    className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    className="block text-xs font-medium text-gray-700 mb-1"
                   >
                     Email
                   </label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
                       <svg
-                        className="h-4 w-4 text-gray-400 dark:text-gray-500"
+                        className="h-4 w-4 text-gray-400"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -184,7 +184,7 @@ const ContactPage = () => {
                       placeholder="yourname@example.com"
                       value={formData.email}
                       onChange={handleChange}
-                      className="pl-8 w-full p-2 text-xs border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 dark:bg-gray-700 dark:text-gray-200"
+                      className="pl-8 w-full p-2 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
                       required
                     />
                   </div>
@@ -193,14 +193,14 @@ const ContactPage = () => {
                 <div className="relative text-left">
                   <label
                     htmlFor="phoneNumber"
-                    className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    className="block text-xs font-medium text-gray-700 mb-1"
                   >
                     Phone
                   </label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
                       <svg
-                        className="h-4 w-4 text-gray-400 dark:text-gray-500"
+                        className="h-4 w-4 text-gray-400"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -221,7 +221,7 @@ const ContactPage = () => {
                       placeholder="+1 (555) 444-0000"
                       value={formData.phoneNumber}
                       onChange={handleChange}
-                      className="pl-8 w-full p-2 text-xs border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 dark:bg-gray-700 dark:text-gray-200"
+                      className="pl-8 w-full p-2 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
                     />
                   </div>
                 </div>
@@ -230,14 +230,14 @@ const ContactPage = () => {
               <div className="relative text-left">
                 <label
                   htmlFor="message"
-                  className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  className="block text-xs font-medium text-gray-700 mb-1"
                 >
                   Message
                 </label>
                 <div className="relative">
                   <div className="absolute left-0 top-2 pl-2 flex items-start pointer-events-none">
                     <svg
-                      className="h-4 w-4 text-gray-400 dark:text-gray-500"
+                      className="h-4 w-4 text-gray-400"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -258,7 +258,7 @@ const ContactPage = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={3}
-                    className="pl-8 w-full p-2 text-xs border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 dark:bg-gray-700 dark:text-gray-200"
+                    className="pl-8 w-full p-2 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
                     required
                   />
                 </div>
@@ -266,7 +266,7 @@ const ContactPage = () => {
 
               {submitSuccess && (
                 <div
-                  className="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-300 px-3 py-2 text-xs rounded-lg"
+                  className="bg-green-50 border border-green-200 text-green-700 px-3 py-2 text-xs rounded-lg"
                   role="alert"
                 >
                   <strong className="font-bold">Success! </strong>
@@ -276,7 +276,7 @@ const ContactPage = () => {
 
               <button
                 type="submit"
-                className={`w-full bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-700 dark:to-indigo-700 text-white py-2 px-4 text-sm rounded-lg 
+                className={`w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-2 px-4 text-sm rounded-lg 
                   ${isSubmitting ? "opacity-75 cursor-not-allowed" : ""}`}
                 disabled={isSubmitting}
               >
@@ -312,7 +312,7 @@ const ContactPage = () => {
           </div>
 
           {/* Right Section - Contact Info with Map */}
-          <div className="w-full md:w-2/5 bg-gradient-to-br from-blue-500 to-indigo-600 dark:from-blue-600 dark:to-indigo-700 text-white p-3 md:p-5">
+          <div className="w-full md:w-2/5 bg-gradient-to-br from-blue-500 to-indigo-600 text-white p-3 md:p-5">
             <div className="h-full flex flex-col">
               <div className="mb-3">
                 <h3 className="text-lg font-bold mb-1">Contact Information</h3>

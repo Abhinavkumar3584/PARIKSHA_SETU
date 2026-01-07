@@ -1,96 +1,78 @@
 {
-    "NEET": {
-      "posts_classes_courses_departments_academy": "ALL COURSES",
-      "gender": ["MALE", "FEMALE"],
-      "marital_status": {
-        "MBBS": ["MARRIED", "UNMARRIED"],
-        "BDS": ["MARRIED", "UNMARRIED"],
-        "AYUSH": ["MARRIED", "UNMARRIED"],
-        "Other Medical Courses": ["MARRIED", "UNMARRIED"]
-      },
-      "domicile": "PAN INDIA",
-      "nationality": [
-        "Indian citizens",
-        "Overseas Citizens of India (OCI)",
-        "Non-Resident Indians (NRI)",
-        "Persons of Indian Origin (PIO)",
-        "Foreign Nationals"
-      ],
-      "pwd_status": "APPLICABLE",
-      "caste_category": ["General", "OBC", "EWS", "SC", "ST", "PH"],
-      "eligibility_education_course": {
-        "MBBS": "Class 12 with PCB",
-        "BDS": "Class 12 with PCB",
-        "AYUSH": "Class 12 with PCB",
-        "Other Medical Courses": "Class 12 with PCB"
-      },
-      "eligibility_course_year": "Passed / Appearing in Class 12 with Physics, Chemistry, Biology/Biotechnology & English from a Recognized Board.",
-      "eligibility_marks": {
-        "General": "50% Marks in PCB",
-        "OBC/EWS": "40% Marks in PCB",
-        "SC/ST/PH": "40% Marks in PCB"
-      },
-      "exam_sector": "UNDERGRADUATE MEDICAL ENTRANCE",
-      "age_criteria": {
-        "NEET-2023": {
-          "Minimum Age": "17 years as of December 31, 2023",
-          "Born on or before": "31.12.2006",
-          "Maximum Age": "No Upper Age Limit",
-          "MBBS": "17 years as of December 31, 2023, No Upper Age Limit",
-          "BDS": "17 years as of December 31, 2023, No Upper Age Limit",
-          "AYUSH": "17 years as of December 31, 2023, No Upper Age Limit",
-          "Other Medical Courses": "17 years as of December 31, 2023, No Upper Age Limit"
-        },
-        "NEET-2024": {
-          "Minimum Age": "17 years as of December 31, 2024",
-          "Born on or before": "31.12.2007",
-          "Maximum Age": "No Upper Age Limit",
-          "MBBS": "17 years as of December 31, 2024, No Upper Age Limit",
-          "BDS": "17 years as of December 31, 2024, No Upper Age Limit",
-          "AYUSH": "17 years as of December 31, 2024, No Upper Age Limit",
-          "Other Medical Courses": "17 years as of December 31, 2024, No Upper Age Limit"
-        },
-        "NEET-2025": {
-          "Minimum Age": "17 years as of December 31, 2025",
-          "Born on or before": "31.12.2008",
-          "Maximum Age": "No Upper Age Limit",
-          "MBBS": "17 years as of December 31, 2025, No Upper Age Limit",
-          "BDS": "17 years as of December 31, 2025, No Upper Age Limit",
-          "AYUSH": "17 years as of December 31, 2025, No Upper Age Limit",
-          "Other Medical Courses": "17 years as of December 31, 2025, No Upper Age Limit"
-        },
-        "NEET-2026": {
-          "Minimum Age": "17 years as of December 31, 2026",
-          "Born on or before": "31.12.2009",
-          "Maximum Age": "No Upper Age Limit"
-        },
-        "NEET-2027": {
-          "Minimum Age": "17 years as of December 31, 2027",
-          "Born on or before": "31.12.2010",
-          "Maximum Age": "No Upper Age Limit"
-        },
-        "NEET-2028": {
-          "Minimum Age": "17 years as of December 31, 2028",
-          "Born on or before": "31.12.2011",
-          "Maximum Age": "No Upper Age Limit"
-        },
-        "NEET-2029": {
-          "Minimum Age": "17 years as of December 31, 2029",
-          "Born on or before": "31.12.2012",
-          "Maximum Age": "No Upper Age Limit"
-        },
-        "NEET-2030": {
-          "Minimum Age": "17 years as of December 31, 2030",
-          "Born on or before": "31.12.2013",
-          "Maximum Age": "No Upper Age Limit"
-        }
-      },
-      "exam_subjects": {
-        "MBBS": ["Physics", "Chemistry", "Biology/Biotechnology"],
-        "BDS": ["Physics", "Chemistry", "Biology/Biotechnology"],
-        "AYUSH": ["Physics", "Chemistry", "Biology/Biotechnology"],
-        "Other Medical Courses": ["Physics", "Chemistry", "Biology/Biotechnology"]
-      },
-      "conducting_body": "National Testing Agency (NTA)"
-    }
+    "exam_code": "NEET",
+    "exam_name": "National Eligibility cum Entrance Test (NEET UG) 2026",
+    "full_form": "National Eligibility cum Entrance Test",
+    "exam_level": "NATIONAL",
+    "exam_sector": "UNDER GRADUATION ADMISSION",
+    "exam_target": "ADMISSION (UG)",
+    "exam_frequency_year": "1",
+    "conducting_body": "NTA (National Testing Agency)",
+    "posts_classes_courses_departments_academies": "",
+
+    "exam_tiers": "SINGLE STAGE CBT",
+    "gender": "MALE, FEMALE",
+    "special_gender_eligibility": "",
+    "marital_status": "ANY",
+    "pwd_status": "APPLICABLE",
+    "domicile": "PAN INDIA",
+    "nationality": "INDIAN, OCI (OVERSEAS CITIZEN OF INDIA), PERSON OF INDIAN ORIGIN (PIO), FOREIGN NATIONALS",
+    "caste_category": "GEN, OBC, EWS, SC, ST, PwD",
+
+    "age_criteria_type": "MAX_AGE",
+    "minimum_age": "",
+    "maximum_age": {
+        "2026": "31-12-2009",
+        "2027": "31-12-2010",
+        "2028": "31-12-2011",
+        "2029": "31-12-2012",
+        "2030": "31-12-2013"
+    },
+    "between_age": "",
+    "age_relaxation": "",
+
+    "maximum_attempts_allowed": "UNLIMITED",
+
+    "highest_education_qualification": "12TH PASS",
+    "eligibility_marks": "50%",
+    "eligibility_education_course": "12TH STANDARD / HIGHER SECONDARY",
+    "eligibility_education_course_subject": "PHYSICS, CHEMISTRY, BIOLOGY (PCB)",
+    "eligibility_course_year": "PASSED, APPEARING",
+    "percentage_10th_requirement": "",
+    "percentage_12th_requirement": "50%",
+    "subjects_at_10th": "",
+    "subjects_at_12th": "PHYSICS, CHEMISTRY, BIOLOGY",
+    "active_backlogs_allowed": "NO",
+    "gap_years_allowed": "NO LIMIT",
+
+    "exam_subjects": "PHYSICS, CHEMISTRY, BIOLOGY",
+    "exam_pattern": "OBJECTIVE TYPE (MCQ)",
+    "exam_sections": "PHYSICS, CHEMISTRY, BOTANY, ZOOLOGY",
+    "mode_of_exam": "OFFLINE (PEN AND PAPER)",
+    "exam_duration": "3 HOURS",
+    "total_marks": "720",
+    "number_of_questions": "200",
+    "marking_scheme": "NEGATIVE MARKING 1/4",
+    "paper_medium": "ENGLISH, HINDI AND REGIONAL LANGUAGES",
+    "exam_date": "MAY 2026",
+
+    "educational_stream_restriction": "SCIENCE STREAM",
+
+    "ncc_wing": "",
+    "ncc_certificate": "",
+    "ncc_certificate_grade": "",
+
+    "sports_quota_eligibility": "",
+    "cpl_holder": "",
+
+    "height_cm": "",
+    "weight_kg": "",
+    "vision_eyesight": "",
+
+    "language_proficiency": "",
+    "driving_license_type": "",
+
+    "current_employment_status": "",
+    "work_experience_required": "NO",
+    "work_experience_years": "",
+    "ex_servicemen_status": ""
 }

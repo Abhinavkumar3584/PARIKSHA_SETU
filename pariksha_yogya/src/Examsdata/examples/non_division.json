@@ -1,0 +1,74 @@
+{
+    "exam_code": "",
+    "exam_name": "",
+    "full_form": "",
+    "exam_level": "",
+    "exam_sector": "",
+    "exam_target": "",
+    "exam_frequency_year": "",
+    "conducting_body": "",
+    "posts_classes_courses_departments_academies": "",
+
+    "exam_tiers": "",
+    "gender": "",
+    "special_gender_eligibility": "",
+    "marital_status": "",
+    "pwd_status": "",
+    "domicile": "",
+    "nationality": "",
+    "caste_category": "",
+
+    "age_criteria_type": "",
+    "minimum_age": "",
+    "maximum_age": "",
+    "between_age": {
+        "EXAM-SESSION": ""
+    },
+    "age_relaxation": "",
+
+    "maximum_attempts_allowed": "",
+
+    "highest_education_qualification": "",
+    "eligibility_marks": "",
+    "eligibility_education_course": "",
+    "eligibility_education_course_subject": "",
+    "eligibility_course_year": "",
+    "percentage_10th_requirement": "",
+    "percentage_12th_requirement": "",
+    "subjects_at_10th": "",
+    "subjects_at_12th": "",
+    "active_backlogs_allowed": "",
+    "gap_years_allowed": "",
+
+    "exam_subjects": "",
+    "exam_pattern": "",
+    "exam_sections": "",
+    "mode_of_exam": "",
+    "exam_duration": "",
+    "total_marks": "",
+    "number_of_questions": "",
+    "marking_scheme": "",
+    "paper_medium": "",
+    "exam_date": "",
+
+    "educational_stream_restriction": "",
+
+    "ncc_wing": "",
+    "ncc_certificate": "",
+    "ncc_certificate_grade": "",
+
+    "sports_quota_eligibility": "",
+    "cpl_holder": "",
+
+    "height_cm": "",
+    "weight_kg": "",
+    "vision_eyesight": "",
+
+    "language_proficiency": "",
+    "driving_license_type": "",
+
+    "current_employment_status": "",
+    "work_experience_required": "",
+    "work_experience_years": "",
+    "ex_servicemen_status": ""
+}

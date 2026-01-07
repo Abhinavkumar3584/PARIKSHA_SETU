@@ -2,7 +2,6 @@ import { Hero } from "@/components/Hero/hero";
 import InfinityImgScroll from "@/components/Infinityimgscroll/infinityimgscroll";
 // import FeatureSection from "@/components/Featurecards/cardscontent";
 import InfinityExams from "@/components/Infinityexams/infinityexams";
-import { PricingTableDemo } from "@/components/Payment/payment";
 import FAQS from "@/components/FAQS/faqs";
 import Footer from "@/components/Footer/footer";
 import { GlowingEffectDemo } from "../components/Featurecards/cardscontent";
@@ -29,10 +28,6 @@ function Home() {
 
       <div className="w-full mx-0 px-0">
         <InfinityExams />
-      </div>
-
-      <div className="w-full p-4 pb-0 m-auto">
-        <PricingTableDemo />
       </div>
 
       <div className="w-full p-4 pb-0 pt-0 m-auto">

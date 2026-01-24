@@ -1,9 +1,8 @@
 import React from 'react';
-import { getExamNames } from '../../Examsdata/codes';
 
 const StatsAnalytics = () => {
-  // Get the actual count of exams from the codes.jsx file
-  const examCount = getExamNames().length;
+  // Number of available exams
+  const examCount = 50;
   
   // Number of main exam folders
   const mainFolderCount = 20; // DEFENCE_ED, PG_ED, SSC_ED, UG_ED

@@ -1,11 +1,10 @@
 import * as React from "react";
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { MoveRight } from "lucide-react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
-import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
 
 // Button Component
 const buttonVariants = cva(
@@ -63,6 +62,7 @@ Button.displayName = "Button";
 
 // Hero Component
 function Hero() {
+  const navigate = useNavigate();
   const [titleNumber, setTitleNumber] = useState(0);
   const titles = useMemo(
     () => [
@@ -130,13 +130,13 @@ function Hero() {
               </span>
             </h1>
           </div>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Link to="/Check/checknow">
-              <Button size="lg" className="gap-4 bg-blue-600 hover:bg-blue-700 text-white">
-                Check Now <MoveRight className="w-4 h-4" />
-              </Button>
-            </Link>
-          </div>
+          <Button
+            size="lg"
+            className="bg-[#ff6600] hover:bg-[#e55a00] text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition-all duration-300 hover:scale-105"
+            onClick={() => navigate("/check-eligibility")}
+          >
+            Check Now
+          </Button>
         </div>
       </div>
     </div>

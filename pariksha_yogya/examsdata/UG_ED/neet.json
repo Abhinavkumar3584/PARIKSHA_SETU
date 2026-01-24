@@ -1,0 +1,182 @@
+{
+    "exam_code": "NEET",
+    "exam_name": "National Eligibility cum Entrance Test (NEET UG) 2026",
+    "full_form": "National Eligibility cum Entrance Test",
+    "exam_level": "NATIONAL",
+    "exam_sector": "UNDER GRADUATION ADMISSION",
+    "exam_target": "ADMISSION (UG)",
+    "exam_frequency_year": "1",
+    "conducting_body": "NTA (National Testing Agency)",
+    "posts_classes_courses_departments_academies": "",
+    "exam_tiers": "SINGLE STAGE CBT",
+
+    "gender": "MALE, FEMALE, TRANSGENDER",
+    "special_gender_eligibility": "",
+    "marital_status": {
+        "MALE": [
+            "UNMARRIED",
+            "MARRIED",
+            "SEPARATED",
+            "DIVORCED",
+            "WIDOWER"
+        ],
+        "FEMALE": [
+            "UNMARRIED",
+            "MARRIED",
+            "SEPARATED",
+            "DIVORCED",
+            "DIVORCEE",
+            "WIDOW"
+        ],
+        "TRANSGENDER": [
+            "UNMARRIED",
+            "MARRIED",
+            "SEPARATED",
+            "DIVORCED",
+            "WIDOW",
+            "WIDOWER"
+        ]
+    },
+    "pwd_status": {
+        "GEN":"45%",
+        "OBC":"45%",
+        "EWS":"45%",
+        "SC":"45%",
+        "ST":"45%"
+    },
+    
+    "nationality": "INDIAN, OCI (OVERSEAS CITIZEN OF INDIA), PERSON OF INDIAN ORIGIN (PIO)",
+    "domicile": "ALL STATES",
+    "caste_category": "GEN, OBC, EWS, SC, ST",
+    "age_criteria_type": "MAX_AGE",
+    "starting_age": "",
+    "ending_age": "",
+    "between_age": "",
+    "minimum_dob": {
+        "2026": "31-12-2009",
+        "2027": "31-12-2010",
+        "2028": "31-12-2011",
+        "2029": "31-12-2012",
+        "2030": "31-12-2013"
+    },
+
+    "maximum_dob": "",
+    "between_dob": "",
+    "no_age_limit": "",
+    "age_relaxation": "",
+    "maximum_attempts_allowed": "UNLIMITED",
+    "highest_education_qualification": "(12TH) HIGHER SECONDARY",
+    "education_levels": {
+        "post_doctorate": "",
+        "phd": "",
+        "post_graduation": "",
+        "graduation": "",
+        "diploma": "",
+        "12th_higher_secondary": {
+            "course": {
+                "options": [
+                    "Science" 
+                ]
+            },
+            "subject": {
+                "Science": [
+                    "Physics, Chemistry, Biology (PCB)",
+                    "Physics, Chemistry, Mathematics, Biology (PCMB)"
+                ]
+            },
+            "status": {
+                "options": [
+                    "PASSED",
+                    "APPEARING"
+                ]
+            },
+            "marks_percentage": {
+                "GEN": "50%",
+                "OBC": "40%",
+                "SC": "40%",
+                "ST": "40%",
+                "EWS": "50%"
+            },
+            "completed_year": "",
+            "board_university": {
+                "options": [
+                    "CBSE",
+                    "ICSE",
+                    "STATE BOARD",
+                    "NIOS",
+                    "OTHER"
+                ]
+            }
+        },
+        "10th_secondary": {
+            "course_stream": {
+                "options": [
+                    "(10TH) SECONDARY"
+                ]
+            },
+            "subject": {
+                "options": [
+                    "Science, Mathematics, Social Science, Languages"
+                   
+                ]
+            },
+            "status": {
+                "options": [
+                    "PASSED",
+                    "APPEARING"
+                ]
+            },
+            "marks_percentage": {
+                        "GEN": "33%",
+                        "OBC": "33%",
+                        "EWS": "33%",
+                        "SC": "33%",
+                        "ST": "33%"
+                        
+                    },
+            "completed_year": "",
+            "board_university": {
+                "options": [
+                    "CBSE",
+                    "ICSE",
+                    "STATE BOARD",
+                    "NIOS",
+                    "OTHER"
+                    
+                ]
+            }
+        },
+        "below_10th": "",
+        "no_education": ""
+    },
+    
+    "active_backlogs_allowed": "NO",
+    "gap_years_allowed": "NO LIMIT",
+
+    "exam_subjects": "PHYSICS, CHEMISTRY, BIOLOGY",
+    "exam_pattern": "OBJECTIVE TYPE (MCQ)",
+    "exam_sections": "PHYSICS, CHEMISTRY, BOTANY, ZOOLOGY",
+    "mode_of_exam": "OFFLINE (PEN AND PAPER)",
+    "exam_duration": "3 HOURS",
+    "total_marks": "720",
+    "number_of_questions": "200",
+    "marking_scheme": "NEGATIVE MARKING 1/4",
+    "paper_medium": "ENGLISH, HINDI AND REGIONAL LANGUAGES",
+    "exam_date": "MAY 2026",
+    "educational_stream_restriction": "SCIENCE STREAM",
+
+    "ncc_wing": "",
+    "ncc_certificate": "",
+    "ncc_certificate_grade": "",
+    "sports_quota_eligibility": "",
+    "cpl_holder": "",
+    "height_cm": "",
+    "weight_kg": "",
+    "vision_eyesight": "",
+    "language_proficiency": "",
+    "driving_license_type": "",
+    "current_employment_status": "",
+    "work_experience_required": "NO",
+    "work_experience_years": "",
+    "ex_servicemen_status": ""
+}

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown, Search } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import login from "../../Pages/login";
 import signup from "../../Pages/signup";
@@ -61,12 +61,6 @@ const Navbar = () => {
             <a href="/about" className="text-gray-700 hover:text-blue-500">
               About Us
             </a>
-            <a
-              href="/contribution"
-              className="text-gray-700 hover:text-blue-500"
-            >
-              Contribution
-            </a>
             <a href="/contact" className="text-gray-700 hover:text-blue-500">
               Contact Us
             </a>
@@ -115,13 +109,7 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Search Bar */}
-            <input
-                  type="text"
-                  placeholder="Search in site"
-                  className="border px-2 py-1 rounded-md text-sm"
-                />
-                <a href="/login" className="text-gray-700 hover:text-blue-500">
+            <a href="/login" className="text-gray-700 hover:text-blue-500">
                   Log In
                 </a>
                 <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
@@ -162,12 +150,6 @@ const Navbar = () => {
               className="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-center"
             >
               About Us
-            </a>
-            <a
-              href="/contribution"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-center"
-            >
-              Contribution
             </a>
             <a
               href="/contact"
@@ -217,16 +199,7 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Search Input with Proper Margins */}
-            <div className="px-4 mt-2">
-                <input
-                  type="text"
-                  placeholder="Search in site"
-                  className="w-full border px-4 py-2 rounded-md text-sm"
-                />
-              </div>
-
-              <a
+            <a
                 href="/login"
                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100 text-center mt-1"
               >

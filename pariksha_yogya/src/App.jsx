@@ -3,7 +3,7 @@ import "./App.css";
 import Navbar from "@/components/Navbar/navbar";
 import { HeroUIProvider } from "@heroui/react";
 import { Routes, Route } from "react-router-dom";
-import ContributionPage from "./Pages/contribution";
+// import ContributionPage from "./Pages/contribution";
 import Home from "./Pages/home";
 import ContactPage from "./Pages/contactus";
 import AboutUs from "./Pages/aboutus";
@@ -12,7 +12,7 @@ import Signup from "./Pages/signup";
 // import PrivacyPolicy from "./Pages/privacypolicy";
 import TermsAndConditions from "./Pages/termsandconditions";
 import RefundPolicy from "./Pages/refundpolicy";
-import CheckEligibility from "./Pages/CheckEligibilityNew";
+import CheckEligibility from "./Pages/checkeligibilitypage";
 
 function App() {
   return (
@@ -32,7 +32,7 @@ function App() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<Home />} />
-          <Route path="/contribution" element={<ContributionPage />} />
+          {/* <Route path="/contribution" element={<ContributionPage />} /> */}
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/login" element={<Login />} />

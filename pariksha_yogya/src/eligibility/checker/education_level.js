@@ -19,7 +19,7 @@
 // ============================================
 
 // Import edu_final.json directly for Vite bundling
-import eduFinalJson from '../../../other files/edu_final.json';
+import eduFinalJson from '../edu_final.json';
 
 // ============================================
 // EDUCATION HIERARCHY CONSTANTS

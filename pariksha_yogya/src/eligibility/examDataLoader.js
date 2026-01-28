@@ -5,7 +5,7 @@
  * This module handles loading exam data from JSON files and allexamnames.json
  */
 
-import allExamNames from '/other files/allexamnames.json';
+import allExamNames from '../../examsdata/allexamnames.json';
 
 // ============================================
 // EXAM DATA IMPORTS (Static imports for Vite)

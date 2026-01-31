@@ -42,14 +42,14 @@ const Navbar = () => {
           {/* Logo and Brand */}
           <Link to="/" className="flex items-center space-x-2">
             <img
-              src="./logos/py.svg"
+              src="./logos/py.png"
               alt="Pariksha Yogya Logo"
-              className="h-10 w-10"
+              className="h-12 w-12"
             />
             <img
               src="./logos/py_name.svg"
               alt="Pariksha Yogya"
-              className="h-5 sm:h-6"
+              className="h-6 sm:h-7"
             />
           </Link>
 

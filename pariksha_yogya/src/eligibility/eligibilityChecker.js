@@ -325,15 +325,15 @@ export const getDisplayDetails = (examData) => {
 // EDUCATION CONFIGURATION HELPERS
 // ============================================
 
+// Import edu_final.json for education config
+import eduFinalJson from './edu_final.json';
+
 /**
  * Get education configuration
  * @returns {Object} - Education config object
  */
 export const getEducationConfig = () => {
-    // Import education config dynamically
-    return import('../eligibility/education_config.json')
-        .then(module => module.default.education_config)
-        .catch(() => ({}));
+    return Promise.resolve(eduFinalJson || {});
 };
 
 /**
@@ -345,10 +345,10 @@ export const getEducationLevels = async () => {
     const levels = [];
     
     for (const [key, value] of Object.entries(config)) {
-        if (value.showInForm) {
+        if (value && typeof value === 'object') {
             levels.push({
                 value: key,
-                label: value.label
+                label: key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
             });
         }
     }
@@ -364,11 +364,12 @@ export const getEducationLevels = async () => {
 export const getCoursesForLevel = async (level) => {
     const config = await getEducationConfig();
     
-    if (!config[level] || !config[level].courses) {
+    if (!config[level]) {
         return [];
     }
     
-    return Object.keys(config[level].courses).map(course => ({
+    // edu_final.json has different structure - keys are course names directly
+    return Object.keys(config[level]).map(course => ({
         value: course,
         label: course
     }));
@@ -383,11 +384,12 @@ export const getCoursesForLevel = async (level) => {
 export const getSubjectsForCourse = async (level, course) => {
     const config = await getEducationConfig();
     
-    if (!config[level] || !config[level].courses || !config[level].courses[course]) {
+    if (!config[level] || !config[level][course]) {
         return [];
     }
     
-    const subjects = config[level].courses[course].subjects || [];
+    // In edu_final.json, subjects are directly under the course
+    const subjects = config[level][course] || [];
     return subjects.map(subject => ({
         value: subject,
         label: subject

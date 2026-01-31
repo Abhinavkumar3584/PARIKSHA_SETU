@@ -1286,7 +1286,7 @@
             "exam_name": "Army NCC Special Entry",
             "exam_code": "ARMYNCC",
             "exam_code_lower": "armyncc",
-            "linked_json_file": "",
+            "linked_json_file": "DEFENCE_ED/armynccentry.json",
             "has_divisions": false
         },
         {

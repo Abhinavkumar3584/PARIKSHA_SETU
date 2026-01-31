@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import allExamsData from '../../../examsdata/allexamnames.json';
 
 const StatsAnalytics = () => {
-  // Number of available exams
-  const examCount = 50;
+  // Count total exams from allexamnames.json
+  const [examCount, setExamCount] = useState(0);
+  const [mainFolderCount, setMainFolderCount] = useState(0);
   
-  // Number of main exam folders
-  const mainFolderCount = 20; // DEFENCE_ED, PG_ED, SSC_ED, UG_ED
+  useEffect(() => {
+    // Count only active exams (with linked_json_file) across all categories
+    let activeExams = 0;
+    let categoryCount = 0;
+    
+    for (const category in allExamsData) {
+      if (Array.isArray(allExamsData[category])) {
+        // Count only exams that have a linked JSON file (active exams)
+        activeExams += allExamsData[category].filter(
+          exam => exam.linked_json_file && exam.linked_json_file !== ''
+        ).length;
+        categoryCount++;
+      }
+    }
+    
+    setExamCount(activeExams);
+    setMainFolderCount(categoryCount);
+  }, []);
   
   // Telegram channel link
   const telegramChannelLink = "https://t.me/pratiyogitasetu";
@@ -59,17 +77,6 @@ const StatsAnalytics = () => {
             </div>
             <div className="text-sm md:text-2xl lg:text-4xl xl:text-5xl font-bold my-1 md:my-2 lg:my-3 text-green-800">2.7M</div>
             <div className="text-green-600 text-[10px] md:text-xs lg:text-base font-medium">Total Users</div>
-          </div>
-
-          {/* Visitors */}
-          <div className="bg-gradient-to-br from-purple-50 to-purple-100 flex flex-col items-center p-2 md:p-3 lg:p-5 border border-purple-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 min-w-[90px] md:min-w-[130px] lg:min-w-[160px] overflow-hidden relative">
-            <div className="absolute -left-4 -bottom-4 w-12 h-12 bg-purple-200 rounded-full opacity-30"></div>
-            <div className="text-[10px] md:text-xs lg:text-sm mb-1 md:mb-2">
-              <span className="bg-purple-600 text-white px-1.5 py-0.5 lg:px-3 lg:py-1.5 rounded-lg font-medium">+500k</span>
-              <span className="text-purple-700 ml-1.5 font-medium">monthly</span>
-            </div>
-            <div className="text-sm md:text-2xl lg:text-4xl xl:text-5xl font-bold my-1 md:my-2 lg:my-3 text-purple-800">12.5M</div>
-            <div className="text-purple-600 text-[10px] md:text-xs lg:text-base font-medium">Visitors</div>
           </div>
 
           {/* Eligible Aspirants */}
